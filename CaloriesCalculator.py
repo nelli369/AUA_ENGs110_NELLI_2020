@@ -69,5 +69,3 @@ for food in data['food']:
      if (food["calories"] == (calories)):
          food_name= str(food["foodName"])
 print(food['foodName'])
-
-
