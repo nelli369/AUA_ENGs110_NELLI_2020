@@ -60,31 +60,10 @@ gain_or_lose(calculate_activity(user_info()))
 
 
 import json
-Food ='''
-{
-  "food": [
-        {"foodName":"BBQ Chicken Flatbread", "foodType":"Sandwich", "calories":380, "carbs":41 },
-        {"foodName":"Chicken Flatbread", "calories":380, "correctedTerm":"BBQ Chicken Flatbread", "carbs":41 },
-        {"foodName":"Tomato Mozzarella Flatbread", "calories":350, "carbs":35 },
-	    {"foodName":"Roasted Turkey Cranberry Flatbread", "calories":310, "carbs":36 },
-	    {"foodName":"Turkey Cranberry Flatbread", "calories":310, "carbs":36 },
-	    {"foodName":"Half Size Italian on Hoagie Roll", "calories":440, "carbs":38 },
-	    {"foodName":"Half Italian", "calories":440, "correctedTerm":"Half Size Italian on Hoagie Roll", "carbs":38 },
-        {"foodName":"Italian", "calories":880, "correctedTerm":"Italian on Hoagie Roll", "carbs":75 },
-        {"foodName":"Chicken Burrito", "foodType":"Burrito", "protein":"chicken", "calories":975},
-        {"foodName":"Steak Burrito", "foodType":"Burrito", "protein":"steak", "calories":945},
-        {"foodName":"Carnitas Burrito", "foodType":"Burrito", "protein":"carnitas", "calories":1005},
-        {"foodName":"Barbacoa Burrito", "foodType":"Burrito", "protein":"barbacoa", "calories":965},
-        {"foodName":"Chorizo Burrito", "foodType":"Burrito", "protein":"chorizo", "calories":1095},
-        {"foodName":"Sofritas Burrito", "foodType":"Burrito", "protein":"sofritas", "calories":945},
-        {"foodName":"Chicken Burrito Bowl", "foodType":"Burrito Bowl", "calories":630},
-        {"foodName":"Chicken Bowl", "calories":630},
-        {"foodName":"Steak Burrito Bowl", "foodType":"Burrito Bowl", "calories":600},
-        {"foodName":"Steak Bowl", "calories":600}
-  ]
-}'''
-data = json.loads(Food)
-print(data)
+with open("Food.json") as f:
+    data = json.load(f)
+for food_list in data ['food']:
+    print(food_list)
 calories = input('Please input calories:')
 for food in data['food']:
      if (food["calories"] == (calories)):
